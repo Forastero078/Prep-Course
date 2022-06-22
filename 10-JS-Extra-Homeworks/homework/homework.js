@@ -10,7 +10,9 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-}
+  var arr = Object.entries(objeto);
+  return arr
+ }
 
 
 function numberOfCharacters(string) {
@@ -20,12 +22,30 @@ function numberOfCharacters(string) {
   //Escribe tu código aquí
 }
 
-
+function Esmayuscula (s){
+  return s === s.toUpperCase()
+}
+function Esminuscula(s){
+  return s === s.toLowerCase()
+}
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let palabraMayuscula = ''
+  let palabraMinuscula = ''
+  for(var i = 0; i < s.length; i++){
+    let letra = s.charAt(i)
+    let mayuscula = Esmayuscula(letra)
+    let minuscula = Esminuscula(letra)
+    if(mayuscula){
+      palabraMayuscula += letra
+    }else if (minuscula){
+      palabraMinuscula += letra
+    }
+    console.log(palabraMayuscula + palabraMinuscula) 
+  }
 }
 
 
@@ -43,6 +63,12 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var str3 = numero.toString();
+  var str4 = str3.split('').reverse().join('')
+if(str3 === str4){
+  return 'Es capicua'
+}
+return 'No es capicua'
 }
 
 
@@ -50,6 +76,16 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var str = cadena
+      for(var i = 0; i < cadena.length; i++){
+  if(cadena[i] === 'a' || 'b' || 'c' ){
+             var str = cadena.replaceAll('a', '')
+      var str = str.replaceAll('b','')
+      var str = str.replaceAll('c','') 
+      
+  }
+      return str
+}
 }
 
 
@@ -57,6 +93,9 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+for(var i = 0; i < arr.length; i++){
+  
+}
 }
 
 
@@ -66,6 +105,13 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var arr3 = [] 
+    for(var i = 0; i < arreglo2.length; i++){
+    if( arreglo1.includes(arreglo2[i])){
+      arr3.push(arreglo2[i])
+    }
+        console.log(arr3)
+} 
 }
 
 
